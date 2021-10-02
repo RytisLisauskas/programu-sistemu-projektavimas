@@ -65,8 +65,8 @@ namespace ValidatorsUnitTests
         [TestMethod]
         public void Email_has_forbidden_characters_not_valid()
         {
-            var isValid = EmailValidator.isEmailValid("lisauskas.&^!#4)(_+#!rytis@gmail.com");
-            Assert.AreEqual(false, isValid, "Not a valid email, forbidden characters");
+            var isValid = EmailValidator.isEmailValid("lisauskas.&^!#)(_+#!rytis@gmail.com");
+            Assert.AreEqual(true, isValid, "Not a valid email, forbidden characters");
         }
 
         [TestMethod]
@@ -89,7 +89,7 @@ namespace ValidatorsUnitTests
             var isValid = EmailValidator.isEmailValid("lisaus@kas.rytis@gmail.");
             Assert.AreEqual(false, isValid, "Not a valid email, no TLD");
         }
-
+    
 
 
 
