@@ -27,11 +27,12 @@ namespace ValidatorsUnitTests
             Assert.AreEqual(false, isValid, "Not a valid password because it does not have upper case letter and is too short.");
         }
 
+        //truksta special simbolio
         [TestMethod]
-        public void Password_is_default_good_should_be_valid()
+        public void Password_doesnt_have_special_symbol_should_be_invalid()
         {
             var isValid = PasswordValidator.IsPasswordValid("AntonioGeorghini8734");
-            Assert.AreEqual(true, isValid, "A valid password.");
+            Assert.AreEqual(false, isValid, "No special symbol");
         }
 
         [TestMethod]
