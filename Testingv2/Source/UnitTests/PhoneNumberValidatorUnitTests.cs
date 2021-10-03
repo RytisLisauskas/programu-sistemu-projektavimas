@@ -14,8 +14,9 @@ namespace ValidatorsUnitTests.Source.UnitTests
             Assert.AreEqual(false, isValid, "Not a valid phone number because its empty spaces only and is too short.");
         }
 
+        //metodo pav nelogiskas
         [TestMethod]
-        public void Phone_number_Is_Blank_should_not_be_valid()
+        public void Phone_number_too_short_should_be_invalid()
         {
             var isValid = PhoneNumberValidator.isPhoneNumberValid("8647");
             Assert.AreEqual(false, isValid, "Not a valid phone number because its too short.");
@@ -42,32 +43,37 @@ namespace ValidatorsUnitTests.Source.UnitTests
             Assert.AreEqual(true, isValid, "Valid number.");
         }
 
+        //assertina true, nors turetu buti false
         [TestMethod]
         public void Phone_number_with_country_number_has_plus()
         {
             var isValid = PhoneNumberValidator.isPhoneNumberValid("+864777262");
-            Assert.AreEqual(true, isValid, "Number not valid, has plus with country number.");
+            Assert.AreEqual(false, isValid, "Number not valid, has plus with country number.");
         }
 
+        //assertas blogas
         [TestMethod]
         public void Phone_number_with_international_code_does_not_have_plus()
         {
             var isValid = PhoneNumberValidator.isPhoneNumberValid("37064777262");
-            Assert.AreEqual(true, isValid, "Number not valid, does not have plus with international code.");
+            Assert.AreEqual(false, isValid, "Number not valid, does not have plus with international code.");
         }
 
+        //assertas blogas
         [TestMethod]
         public void Phone_number_has_wrong_first_character()
         {
             var isValid = PhoneNumberValidator.isPhoneNumberValid("-a37064777262");
-            Assert.AreEqual(true, isValid, "Number not valid, wrong character at the beggining.");
+            Assert.AreEqual(false, isValid, "Number not valid, wrong character at the beggining.");
         }
 
+        
+        //assertas blogas
         [TestMethod]
         public void Phone_number_()
         {
             var isValid = PhoneNumberValidator.isPhoneNumberValid("-a37064777262");
-            Assert.(true, isValid, "Number not valid, wrong character at the beggining.");
+            Assert.AreEqual(false, isValid, "Number not valid, wrong character at the beggining.");
         }
 
         [TestMethod]
