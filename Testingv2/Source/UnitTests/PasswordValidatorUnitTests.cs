@@ -1,5 +1,5 @@
+using LibraryProject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ValidatorsUnitTests.Source.Validators;
 
 namespace ValidatorsUnitTests
 {

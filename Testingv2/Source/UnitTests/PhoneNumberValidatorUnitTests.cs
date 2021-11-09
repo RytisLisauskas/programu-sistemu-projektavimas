@@ -1,6 +1,7 @@
 ﻿
+using LibraryProject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ValidatorsUnitTests.Source.Validators;
+
 
 namespace ValidatorsUnitTests.Source.UnitTests
 {
@@ -67,7 +68,7 @@ namespace ValidatorsUnitTests.Source.UnitTests
         public void Phone_number_()
         {
             var isValid = PhoneNumberValidator.isPhoneNumberValid("-a37064777262");
-            Assert.(true, isValid, "Number not valid, wrong character at the beggining.");
+            Assert.AreEqual(true, isValid, "Number not valid, wrong character at the beggining.");
         }
 
         [TestMethod]
